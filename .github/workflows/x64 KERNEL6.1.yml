@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: OpenWrt firmware X64 KERNEL6.1
+name: OpenWrt firmware X64 KERNEL5.4
 
 on: 
   workflow_dispatch:
@@ -96,7 +96,7 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt firmware X64 KERNEL6.1
+        name: OpenWrt firmware X64 KERNEL5.4
         path: openwrt/bin
 
     - name: Delete workflow runs
