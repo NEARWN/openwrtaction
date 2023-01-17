@@ -63,7 +63,6 @@ jobs:
       run: |
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-        ./scripts/feeds install -a
         
     - name: Import external feeds - mosdns&music
       working-directory: ./openwrt
