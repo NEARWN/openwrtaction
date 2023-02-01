@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: OpenWrt firmware X64
+name: OpenWrt firmware X64 QiuSimons mosdns
 
 on: 
   workflow_dispatch:
