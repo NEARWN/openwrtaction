@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: OpenWrt firmware X64 music
+name: OpenWrt firmware X64 music QiuSimons mosdns 
 
 on: 
   workflow_dispatch:
@@ -98,7 +98,7 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt firmware X64 music
+        name: OpenWrt firmware X64 music QiuSimons mosdns 
         path: openwrt/bin
 
     - name: Delete workflow runs
