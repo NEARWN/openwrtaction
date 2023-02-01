@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: OpenWrt firmware rockchip hinlink h68k
+name: OpenWrt firmware rockchip hinlink h68k QiuSimons mosdns
 
 on: 
   workflow_dispatch:
@@ -103,7 +103,7 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt firmware rockchip hinlink h68k
+        name: OpenWrt firmware rockchip hinlink h68k QiuSimons mosdns
         path: openwrt/bin
 
     - name: Delete workflow runs
