@@ -69,6 +69,9 @@ jobs:
       run: |
         rm -rf feeds/luci/applications/luci-app-mosdns
         rm -rf feeds/packages/net/mosdns
+        rm -rf feeds/packages/net/v2ray-geodata
+        rm -rf feeds/ssrp/v2ray-geodata        
+        git clone https://github.com/sbwml/v2ray-geodata package/net/v2ray-geodata        
         git clone https://github.com/QiuSimons/openwrt-mos.git package/openwrt-mos
 
     - name: Configuration Customization - Build_x86_64
