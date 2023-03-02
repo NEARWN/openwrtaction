@@ -10,7 +10,7 @@ name: OpenWrt firmware X64 QiuSimons mosdns
 on: 
   workflow_dispatch:
   schedule:
-    - cron: 0 20 * * *
+    - cron: 0 20 * * 5
   
 jobs:
   build:
