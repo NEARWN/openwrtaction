@@ -57,8 +57,6 @@ jobs:
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
         echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default
-        src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall.git;packages
-        src-git passwall_luci https://github.com/xiaorouji/openwrt-passwall.git;luci
         
     - name: Update & Install feeds
       working-directory: ./openwrt
@@ -75,6 +73,8 @@ jobs:
         rm -rf feeds/ssrp/v2ray-geodata
         git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
         git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+        git clone https://github.com/xiaorouji/openwrt-passwall.git -b packages ./package/passwall_package
+        git clone https://github.com/xiaorouji/openwrt-passwall.git -b luci ./package/passwall
     #    git clone "your_github_link" package/"your_folder_name" 
 
     #- name: Import external feeds - music
