@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: OpenWrt firmware X64 syncdial sbwml mosdns
+name: OpenWrt firmware X64mwan sbwml mosdns
 
 on: 
   workflow_dispatch:
@@ -77,7 +77,7 @@ jobs:
 
     - name: Configuration Customization - Build_x86_64
       env:
-        CONFIG_FILE: 'config/x64syncdial.config'
+        CONFIG_FILE: 'config/x64mwan.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         cd openwrt && make defconfig
@@ -98,7 +98,7 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt firmware X64 syncdial sbwml mosdns
+        name: OpenWrt firmware X64mwan sbwml mosdns
         path: openwrt/bin
 
     - name: Delete workflow runs
