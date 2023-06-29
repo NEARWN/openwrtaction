@@ -10,7 +10,7 @@ name: OpenWrt firmware X64 mwan sbwml mosdns
 on: 
   workflow_dispatch:
   schedule:
-    - cron: 0 20 * * *
+  #  - cron: 0 20 * * *
   
 jobs:
   build:
