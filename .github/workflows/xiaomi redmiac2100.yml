@@ -10,7 +10,7 @@ name: OpenWrt firmware xiaomi redmiac2100
 on: 
   workflow_dispatch:
   schedule:
-    - cron: 0 20 * * 5
+    #- cron: 0 20 * * 5
   
 jobs:
   build:
