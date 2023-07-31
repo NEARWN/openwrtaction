@@ -13,9 +13,7 @@ on:
     - cron: 0 20 * * *
   
 jobs:
-
-  build_openwrt:
-  
+  build_openwrt:  
     runs-on: ubuntu-latest
 
     steps:
