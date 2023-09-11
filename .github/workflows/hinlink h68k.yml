@@ -62,17 +62,8 @@ jobs:
       working-directory: ./openwrt
       run: |
         ./scripts/feeds update -a
-        ./scripts/feeds install -a
-        
-    - name: Import external feeds - v2ray-geodata
-      working-directory: ./openwrt
-      run: |
-        rm -rf feeds/packages/net/v2ray-geodata
-        rm -rf feeds/ssrp/v2ray-geodata
-        git clone https://github.com/sbwml/v2ray-geodata package/net/v2ray-geodata
-        git clone https://github.com/sbwml/v2ray-geodata ssrp/v2ray-geodata
-        
-    #    git clone "your_github_link" package/"your_folder_name"       
+        ./scripts/feeds install -a        
+  
     #- name: Import external feeds - music
     #  working-directory: ./openwrt
     #  run: |
