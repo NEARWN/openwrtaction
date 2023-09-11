@@ -64,7 +64,7 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
          
-    - name: Import external feeds - mosdns&music 
+    - name: Import external feeds - mosdns
       working-directory: ./openwrt
       run: |
         rm -rf feeds/luci/applications/luci-app-mosdns
@@ -72,7 +72,7 @@ jobs:
         rm -rf feeds/packages/net/v2ray-geodata
         rm -rf feeds/ssrp/v2ray-geodata
         git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-        git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+        git clone https://github.com/NEARWN/v2ray-geodata package/v2ray-geodata
         git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/music
     #    git clone "your_github_link" package/"your_folder_name" 
 
