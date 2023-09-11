@@ -64,6 +64,15 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         
+    - name: Import external feeds - v2ray-geodat
+      working-directory: ./openwrt
+      run: |
+        rm -rf feeds/packages/net/v2ray-geodata
+        rm -rf feeds/ssrp/v2ray-geodata
+        git clone https://github.com/NEARWN/v2ray-geodata packages/net/v2ray-geodata
+        git clone https://github.com/NEARWN/v2ray-geodata ssrp/v2ray-geodata   
+    #    git clone "your_github_link" package/"your_folder_name"    
+    
     #- name: Import external feeds - music
     #  working-directory: ./openwrt
     #  run: |
@@ -72,7 +81,7 @@ jobs:
 
     - name: Configuration Customization - Build_redmiax6000
       env:
-        CONFIG_FILE: 'config/rmax6000.config'
+        CONFIG_FILE: 'config/rmax60001.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         cd openwrt && make defconfig
