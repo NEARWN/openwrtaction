@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: OpenWrt firmware X64 sbwml mosdns
+name: OpenWrt firmware X64
 
 on: 
   workflow_dispatch:
@@ -64,17 +64,6 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
          
-    - name: Import external feeds - mosdns
-      working-directory: ./openwrt
-      run: |
-        rm -rf feeds/luci/applications/luci-app-mosdns
-        rm -rf feeds/packages/net/mosdns
-        rm -rf feeds/packages/net/v2ray-geodata
-        rm -rf feeds/ssrp/v2ray-geodata
-        git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-        git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-    #    git clone "your_github_link" package/"your_folder_name" 
-
     - name: Configuration Customization - Build_x86_64
       env:
         CONFIG_FILE: 'config/x64.config'
@@ -98,7 +87,7 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: OpenWrt firmware X64 sbwml mosdns
+        name: OpenWrt firmware X64
         path: openwrt/bin
 
     - name: Delete workflow runs
