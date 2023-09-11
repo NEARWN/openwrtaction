@@ -62,7 +62,16 @@ jobs:
       working-directory: ./openwrt
       run: |
         ./scripts/feeds update -a
-        ./scripts/feeds install -a        
+        ./scripts/feeds install -a  
+        
+    - name: Import external feeds - v2ray-geodat
+      working-directory: ./openwrt
+      run: |
+        rm -rf feeds/packages/net/v2ray-geodata
+        rm -rf feeds/ssrp/v2ray-geodata
+        git clone https://github.com/NEARWN/v2ray-geodata packages/net/v2ray-geodata
+        git clone https://github.com/NEARWN/v2ray-geodata ssrp/v2ray-geodata   
+    #    git clone "your_github_link" package/"your_folder_name"         
   
     #- name: Import external feeds - music
     #  working-directory: ./openwrt
@@ -72,7 +81,7 @@ jobs:
 
     - name: Configuration Customization - rockchip hinlink h68k
       env:
-        CONFIG_FILE: 'config/h68k.config'
+        CONFIG_FILE: 'config/h68k1.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         cd openwrt && make defconfig
