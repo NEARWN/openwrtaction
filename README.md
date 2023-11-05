@@ -6,7 +6,9 @@ https://github.com/esirplayground/AutoBuild-OpenWrt
 
 编译源码使用
 
-Lean's OpenWrt source https://github.com/coolsnowwolf/lede
+Lean's OpenWrt source
+
+https://github.com/coolsnowwolf/lede
 
 替换源码中MOSDNS为以下源码
 
