@@ -73,7 +73,13 @@ jobs:
         rm -rf feeds/ssrp/v2ray-geodata
         git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
         git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata   
-    #    git clone "your_github_link" package/"your_folder_name" 
+    #    git clone "your_github_link" package/"your_folder_name"  
+
+    #- name: Import external feeds - music
+    #  working-directory: ./openwrt
+    #  run: |
+    #    git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/music
+    #    git clone "your_github_link" package/"your_folder_name"    
 
     - name: Configuration Customization - Build_x86_64
       env:
