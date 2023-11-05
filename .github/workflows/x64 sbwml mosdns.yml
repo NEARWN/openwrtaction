@@ -55,9 +55,9 @@ jobs:
         REPO_BRANCH: master
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
-    #    cd openwrt
-    #    echo "src-git ssrp https://github.com/fw876/helloworld.git" >> ./feeds.conf.default      
-  
+        cd openwrt
+        echo "src-git ssrp https://github.com/fw876/helloworld.git;main" >> ./feeds.conf.default      
+ 
     - name: Update & Install feeds
       working-directory: ./openwrt
       run: |
@@ -70,8 +70,7 @@ jobs:
         rm -rf feeds/luci/applications/luci-app-mosdns
         rm -rf feeds/packages/net/mosdns
         rm -rf feeds/packages/net/v2ray-geodata
-        git clone --depth=1 -b main https://github.com/fw876/helloworld package/ssrp
-        rm -rf package/ssrp/v2ray-geodata
+        rm -rf feeds/ssrp/v2ray-geodata
         git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
         git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata   
     #    git clone "your_github_link" package/"your_folder_name" 
