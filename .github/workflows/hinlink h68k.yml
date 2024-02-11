@@ -15,9 +15,6 @@ on:
 jobs:
 
   build_openwrt:
-
-    name: OpenWrt firmware rockchip hinlink h68k
-
     runs-on: ubuntu-latest
 
     steps:
