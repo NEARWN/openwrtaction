@@ -13,16 +13,17 @@ on:
     - cron: 0 20 * * *
   
 jobs:
-
   build:
-  
     runs-on: ubuntu-latest
 
     steps:
-      - name: Space cleanup and Initialization environment
-        env:
-          DEBIAN_FRONTEND: noninteractive
-        run: |
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Initialization environment
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
           docker rmi `docker images -q`
           sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d /usr/local/lib/android
           sudo -E apt-mark hold grub-efi-amd64-signed
