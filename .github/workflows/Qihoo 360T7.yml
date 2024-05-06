@@ -59,7 +59,7 @@ jobs:
     #    git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/music
     #    git clone "your_github_link" package/"your_folder_name"             
 
-    - name: Configuration Customization - Build_redmiax6000
+    - name: Configuration Customization
       env:
         CONFIG_FILE: 'config/360T7.config'
       run: |
